@@ -1,4 +1,4 @@
-def lru(pages, frame_count):
+def mru(pages, frame_count):
     frames = []
     last_page = pages[-1]
     
@@ -10,9 +10,10 @@ def lru(pages, frame_count):
             if len(frames) < frame_count:
                 frames.append(page)
             else:
-                frames.pop(0)  #remove a menos recentemente usada
+                #remove a página mais recentemente usada (última da lista)
+                frames.pop(-1)
                 frames.append(page)
-    
+                
     index_last_page = frames.index(last_page) if last_page in frames else None
     print("Quadros finais:", frames)
     print("A última página está no quadro:", index_last_page + 1, "\n")
@@ -27,7 +28,7 @@ sequences = [
 
 frame_count = 8
 
-#LRU em cada sequência
+#MRU em cada sequência
 for i, pages in enumerate(sequences, 1):
     print(f"===== Sequência {i} =====")
-    lru(pages, frame_count)
+    mru(pages, frame_count)

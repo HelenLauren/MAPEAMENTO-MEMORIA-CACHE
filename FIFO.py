@@ -11,8 +11,8 @@ def fifo(pages, frame_count):
                 frames.append(page)
     
     index_last_page = frames.index(last_page) if last_page in frames else None
-    print("FIFO - Quadros finais:", frames)
-    print("FIFO - A última página está no quadro:", index_last_page + 1, "\n")
+    print("Quadros finais:", frames)
+    print("FIFO A última página está no quadro:", index_last_page + 1, "\n")
 
     #Sequências exemplo:
 sequences = [
