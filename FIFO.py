@@ -13,7 +13,7 @@ for page in pages:
         if len(frames) < frame_count:
             frames.append(page)
         else:
-            frames.pop(0)
+            frames.pop(0) #se não existir na lista, remove a pág que entrou primeiro e adiciona a nova página
             frames.append(page)
 
 #Estado final dos quadros
@@ -21,4 +21,4 @@ print("Quadros finais:", frames)
 
 #Diz em qual quadro ficou a última página inserida.
 index_last_page = frames.index(last_page) if last_page in frames else None
-print("A última página está no quadro:", index_last_page)
+print("A última página está no quadro:", index_last_page + 1) #adicionado +1 pois a lista começa no index 0.
